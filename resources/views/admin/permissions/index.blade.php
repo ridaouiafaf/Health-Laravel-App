@@ -53,7 +53,7 @@
                                 @endcan
 
                                 @can('permission_edit')
-                                    <a class="btn btn-xs btn-secondary" href="{{ route('admin.permissions.edit', $permission->id) }}">
+                                    <a class="btn btn-xs btn-dark" href="{{ route('admin.permissions.edit', $permission->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan

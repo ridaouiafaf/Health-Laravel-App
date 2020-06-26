@@ -18,8 +18,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $posts=Post::with(['image'])->get();
-
         $posts=Post::with(['image'])->orderBy('created_at', 'desc')->get();
 
         return view('posts.index',[

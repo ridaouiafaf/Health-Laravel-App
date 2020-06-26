@@ -10,6 +10,14 @@
                     News Feed
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route("admin.links.index") }}" class="nav-link">
+                    <i class="nav-icon fas fa-fw fa-tachometer-alt text-success">
+
+                    </i>
+                    Beneficial Links
+                </a>
+            </li>
             @can('user_management_access')
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle " href="#">

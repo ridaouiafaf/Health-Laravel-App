@@ -52,8 +52,15 @@ table.dataTable thead th {
 .btn-info,
 .badge-info {
     color: white;
+    background-color:#33373a;
+    border-color:#33373a;
 }
-
+.btn-primary,
+.badge-primary {
+    color: white;
+    background-color: #53b876;
+    border-color:#53b876;
+}
 table.dataTable thead .sorting,
 table.dataTable thead .sorting_asc,
 table.dataTable thead .sorting_desc {
@@ -90,7 +97,17 @@ table.dataTable thead .sorting_desc {
     background-color: #d9e1e6;
     border-color: #d1dbe1;
 }
+.btn-info:hover {
+    color: white;
+    background-color: #1e2225d3;
+    border-color: #1e2225d3;
+}
 
+.btn-primary:hover {
+    color: white;
+    background-color: #359155;
+    border-color: #359155;
+}
 .btn-group-xs > .btn,
 .btn-xs {
     padding: 1px 5px;
@@ -117,10 +134,6 @@ table.dataTable thead .sorting_desc {
     padding-right: 0px;
 }
 
-/* img.img-post{
-    max-width: 50%;
-    height: auto;
-} */
 
 .col-lg-12{
     display: flex;
@@ -129,9 +142,7 @@ table.dataTable thead .sorting_desc {
     height: fit-content;
     width: fit-content;
 }
-.list-group-item{
-    padding: 20px;
-}
+
 
 div.gallery {
   margin: 5px;

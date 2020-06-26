@@ -4,12 +4,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
-Route::redirect('/home', '/admin');
+Route::redirect('/home', '/admin/posts');
 Auth::routes(['register' => false]);
 
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::resource('posts','PostController');
+    Route::resource('links','LinkController');
+
 
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');

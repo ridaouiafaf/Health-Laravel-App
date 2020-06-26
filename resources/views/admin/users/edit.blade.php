@@ -48,8 +48,8 @@
             </div>
             <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
                 <label for="roles">{{ trans('cruds.user.fields.roles') }}*
-                    <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
-                    <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label>
+                    <span class="btn btn-dark btn-xs select-all">{{ trans('global.select_all') }}</span>
+                    <span class="btn btn-dark btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label>
                 <select name="roles[]" id="roles" class="form-control select2" multiple="multiple" required>
                     @foreach($roles as $id => $roles)
                         <option value="{{ $id }}" {{ (in_array($id, old('roles', [])) || isset($user) && $user->roles->contains($id)) ? 'selected' : '' }}>{{ $roles }}</option>
