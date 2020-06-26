@@ -1,12 +1,9 @@
-# Laravel 6 Appointments System demo
+# Laravel 7 Appointments System & Blood Donation Awarness Demo
 
-Simple project to manage appointments for companies like beauty salon, medical clinic or car repair shop.
 
-You can manage your Services, Employees, Clients and Appointments, viewing them in a calendar.
 
-![Laravel Appointments calendar](https://laraveldaily.com/wp-content/uploads/2019/09/laravel-appointments-calendar.png)
-
-![Laravel Appointments form](https://laraveldaily.com/wp-content/uploads/2019/09/laravel-appointments-form.png)
+![Login](https://weheartit.com/entry/345757051)
+![...](https://weheartit.com/entry/345832057)
 
 ---
 
@@ -32,11 +29,12 @@ Other assets used:
 
 ## License
 
-Basically, feel free to use and re-use any way you want.
+- Basically, feel free to use and re-use the LaravelDaily Team features since they still making it for free.
+- Secondly, feel free to contact before using or pulling a request to this project.
 
 ---
 
-## More from our LaravelDaily Team
+## More from LaravelDaily Team
 
 - Check out our adminpanel generator [QuickAdminPanel](https://quickadminpanel.com)
 - Read our [Blog with Laravel Tutorials](https://laraveldaily.com)
