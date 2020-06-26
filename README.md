@@ -1,7 +1,8 @@
 # Laravel 7 Appointments System & Blood Donation Awarness Demo
 
 
-
+This project is build by me using this useful template from LaravelDaily Team "Big thanks to them"
+Link to the template used : https://github.com/LaravelDaily/Laravel-Appointments
 ![Login](https://data.whicdn.com/images/345757051/original.png)
 ![...](https://data.whicdn.com/images/345832057/original.png)
 
@@ -24,6 +25,7 @@ This project consists on the development of a dynamic "Health Sector Interface -
 - Bringing citizens closer to the health sector and its services.
 
 The project will also have to meet the different functional expectations of the users involved (Donors, Patients, Doctors, etc.). In its design, it will have to comply with the recommendations and management constraints of most departments in the health sector.
+
 ---
 ## How to use
 
