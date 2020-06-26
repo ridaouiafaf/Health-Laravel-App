@@ -2,8 +2,8 @@
 
 
 
-![Login](https://weheartit.com/entry/345757051)
-![...](https://weheartit.com/entry/345832057)
+![Login](https://data.whicdn.com/images/345757051/original.png)
+![...](https://data.whicdn.com/images/345832057/original.png)
 
 ---
 
