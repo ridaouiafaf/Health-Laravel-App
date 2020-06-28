@@ -76,7 +76,7 @@ table.dataTable thead .sorting_desc {
     color: white;
   }
 
-  .sidebar .nav-item a:hover:not(.active) {
+.sidebar .nav-item a:hover:not(.active) {
     background-color: #555;
     color: white;
   }
@@ -179,3 +179,5 @@ div.desc {
     display: flex;
     justify-content: center;
 }
+
+

@@ -64,9 +64,13 @@ class LinkController extends Controller
      * @param  \App\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function edit(Link $link)
+    public function edit($id)
     {
-        //
+        $link=Link::findOrFail($id);
+
+        return view('links.edit',[
+            'link'=>$link
+        ]);
     }
 
     /**
@@ -76,9 +80,19 @@ class LinkController extends Controller
      * @param  \App\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function update(LinkRequest $request, Link $link)
+    public function update(LinkRequest $request,$id)
     {
-        //
+        $link=link::findOrFail($id);
+
+        $link->title=$request->input('title');
+        $link->description=$request->input('description');
+
+        
+        $link->url=$request->input('url');
+            
+        $link->save();
+
+        return redirect()->route('admin.links.index');
     }
 
     /**
@@ -87,8 +101,10 @@ class LinkController extends Controller
      * @param  \App\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Link $link)
+    public function destroy($id)
     {
-        //
+        Link::destroy($id);
+
+        return redirect()->route('admin.links.index');
     }
 }
