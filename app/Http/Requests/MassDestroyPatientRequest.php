@@ -2,16 +2,16 @@
 
 namespace App\Http\Requests;
 
-use App\Client;
+use App\Patient;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;
 
-class StoreClientRequest extends FormRequest
+class MassDestroyPatientRequest extends FormRequest
 {
     public function authorize()
     {
-        abort_if(Gate::denies('client_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('patient_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return true;
     }
@@ -19,6 +19,8 @@ class StoreClientRequest extends FormRequest
     public function rules()
     {
         return [
+            'ids'   => 'required|array',
+            'ids.*' => 'exists:patients,id',
         ];
     }
 }

@@ -2,54 +2,54 @@
 
 namespace App\Http\Controllers\Api\V1\Admin;
 
-use App\Client;
+use App\Patient;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreClientRequest;
-use App\Http\Requests\UpdateClientRequest;
-use App\Http\Resources\Admin\ClientResource;
+use App\Http\Requests\StorePatientRequest;
+use App\Http\Requests\UpdatePatientRequest;
+use App\Http\Resources\Admin\PatientResource;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ClientsApiController extends Controller
+class PatientsApiController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('client_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('patient_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new ClientResource(Client::all());
+        return new PatientResource(Patient::all());
     }
 
-    public function store(StoreClientRequest $request)
+    public function store(StorePatientRequest $request)
     {
-        $client = Client::create($request->all());
+        $patient = Patient::create($request->all());
 
-        return (new ClientResource($client))
+        return (new PatientResource($patient))
             ->response()
             ->setStatusCode(Response::HTTP_CREATED);
     }
 
-    public function show(Client $client)
+    public function show(Patient $patient)
     {
-        abort_if(Gate::denies('client_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('patient_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new ClientResource($client);
+        return new PatientResource($patient);
     }
 
-    public function update(UpdateClientRequest $request, Client $client)
+    public function update(UpdatePatientRequest $request, Patient $patient)
     {
-        $client->update($request->all());
+        $patient->update($request->all());
 
-        return (new ClientResource($client))
+        return (new PatientResource($patient))
             ->response()
             ->setStatusCode(Response::HTTP_ACCEPTED);
     }
 
-    public function destroy(Client $client)
+    public function destroy(Patient $patient)
     {
-        abort_if(Gate::denies('client_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('patient_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $client->delete();
+        $patient->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

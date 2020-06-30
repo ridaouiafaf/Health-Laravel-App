@@ -80,13 +80,13 @@
                     </a>
                 </li>
             @endcan
-            @can('client_access')
+            @can('patient_access')
                 <li class="nav-item">
-                    <a href="{{ route("admin.clients.index") }}" class="nav-link {{ request()->is('admin/clients') || request()->is('admin/clients/*') ? 'active' : '' }}">
+                    <a href="{{ route("admin.patients.index") }}" class="nav-link {{ request()->is('admin/patients') || request()->is('admin/patients/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-cogs nav-icon text-success">
 
                         </i>
-                        {{ trans('cruds.client.title') }}
+                        {{ trans('cruds.patient.title') }}
                     </a>
                 </li>
             @endcan
