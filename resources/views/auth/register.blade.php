@@ -14,18 +14,29 @@
                     
                     {{-- <a class="navbar-brand" href="#"><img src={{asset('img/logo.png')}} alt="logo"></a> --}}
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
-                        <h1>Orzoqni Al Hayat</h1>
-                        <p class="text-muted">{{ trans('global.login') }}</p>
-                        <div style="width: 100%;text-align: right;">
-                            <img src={{asset('img/logoLogin.png')}} style="width: 600px;" />
-                        </div>
+                        <h1>Sign Up</h1>
+                        <p class="text-muted">{{ trans('global.register') }}</p>
+                        
                         <br>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
+                                </span>
+                            </div>
+                            <input name="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required autofocus placeholder="{{ trans('global.login_name') }}" value="{{ old('name', null) }}">
+                            @if($errors->has('name'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('name') }}
+                                </div>
+                            @endif
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-at"></i>
                                 </span>
                             </div>
                             <input name="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autofocus placeholder="{{ trans('global.login_email') }}" value="{{ old('email', null) }}">
@@ -59,24 +70,11 @@
 
                         <div class="row">
                             <div class="col-6">
-                                <button type="submit" class="btn btn-danger px-4">
-                                    {{ trans('global.login') }}
-                                </button>
-                                    <button class="btn btn-danger px-4">
-                                        <a class="text-white" href="{{route('register')}}">
-                                            Register
-                                        </a>        
-                                    </button>
+                                <button type="submit" class="btn btn-danger px-4">Register</button>
                             </div>
                         </div>
                     </form>
                     
-                    <div class="col-6 text-right">
-                        <a class="btn btn-link text-success px-0" href="{{ route('password.request') }}">
-                            {{ trans('global.forgot_password') }}
-                        </a>
-
-                    </div>
                 </div>
             </div>
         </div>

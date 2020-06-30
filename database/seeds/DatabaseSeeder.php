@@ -1,5 +1,6 @@
 <?php
 
+use App\Image;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,6 +17,9 @@ class DatabaseSeeder extends Seeder
             EmployeesTableSeeder::class,
             ClientsTableSeeder::class,
             AppointmentsTableSeeder::class,
+            ImagesTableSeeder::class,
+            PostsTableSeeder::class,
+            LinksTableSeeder::class,
         ]);
     }
 }
