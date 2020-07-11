@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePost;
 use App\Image;
 use App\Post;
+use Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class PostController extends Controller
 {
@@ -18,6 +21,8 @@ class PostController extends Controller
      */
     public function index()
     {
+        // abort_if(Gate::denies('post_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $posts=Post::with(['image'])->orderBy('created_at', 'desc')->get();
 
         return view('posts.index',[
@@ -32,6 +37,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        abort_if(Gate::denies('post_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         return view('posts.create');
     }
 
@@ -73,6 +79,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        abort_if(Gate::denies('post_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $post=Post::findOrFail($id);
 
         $image=Image::where('id',$post->image_id)->first();
@@ -90,6 +98,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        abort_if(Gate::denies('post_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $post=Post::findOrFail($id);
 
         $image=Image::where('id',$post->image_id)->first();
@@ -153,6 +163,8 @@ class PostController extends Controller
      */
     public function destroy(Request $request,$id)
     {
+        abort_if(Gate::denies('post_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $post=Post::findOrFail($id);
 
         $image=Image::where('id',$post->image_id)->first();

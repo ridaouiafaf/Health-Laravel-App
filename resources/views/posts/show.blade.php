@@ -6,14 +6,22 @@
 <div class="col-md-12">
     <img class="col-md-12" src="{{asset('posts-img/'.$image->imgName)}}">
     <p style="text-align:justify; " class="col-md-12">{{$post->body}}</p>
-    <form class="col-md-12" style="display: inline" method="POST" action="{{route('admin.posts.destroy',['post'=>$post->id])}}">
+    
+</div>
+<div class="col-md-12" style="display: inline">
+    <form class="col-md-12" method="POST" action="{{route('admin.posts.destroy',['post'=>$post->id])}}">
         @csrf
         @method('DELETE')
-        <button style=" background-color:rgb(189, 134, 134)"" class="btn float-right col-md-2" type="button">
-        <a style="color: white;" href="{{route('admin.posts.edit',['post'=>$post->id])}}">Edit</a>
-        </button>
+        @can('post_delete')
         <button style="background-color:rgba(255, 0, 0, 0.767) "class="btn btn-danger float-right col-md-2" type="submit">Delete</button>
-    </form>   
+        @endcan
+        
+    </form>
+    @can('post_edit')
+        <a href="{{route('admin.posts.edit',['post'=>$post->id])}}">
+            <button style=" background-color:rgb(189, 134, 134); color:white" class="btn float-right col-md-2" type="button">Edit</button>
+    </a>
+    @endcan
 </div>
 
 @endsection

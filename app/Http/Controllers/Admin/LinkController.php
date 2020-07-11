@@ -6,9 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LinkRequest;
 use App\Link;
 use Illuminate\Http\Request;
+use Gate;
+use Symfony\Component\HttpFoundation\Response;
 
 class LinkController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest')->except(['index']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +22,8 @@ class LinkController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('link_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $links=Link::all();
         return view('links.index',[
             'links'=>$links

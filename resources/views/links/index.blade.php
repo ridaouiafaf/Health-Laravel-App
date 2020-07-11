@@ -3,7 +3,10 @@
 @section('content')
 
 <div class="content">
-        <a class="btn btn-success" href="{{route('admin.links.create')}}" >+ Add Link</a>
+    @can('link_create')
+    <a class="btn btn-success" href="{{route('admin.links.create')}}" >+ Add Link</a>
+    @endcan
+
     <ul style="padding: 20px" class="list-group">
         <li class="list-group-item col-md-12" style="background-color: #2F353A">
                 <img class="rounded-circle border border-dark" style="float: right" src="{{asset('img/symboleLink.png')}}" alt="beneficial links" width="30%" height="30%">
@@ -23,13 +26,17 @@
             <h3 class="text-center bg-dark" style="font-family: fantasy; color:white">{{$link->title}}</h3>
             <h5 style="font-family: fantasy; color:rgb(245, 80, 80)">What for?</h5>
             <p style="text-align: justify">{{$link->description}}</p>
+            @can('link_delete')
             <form class="col-md-12" style="display: inline" method="POST" action="{{route('admin.links.destroy',['link'=>$link->id])}}">
                 @csrf
                 @method('DELETE')
                 <button style="background-color:rgba(255, 0, 0, 0.767) "class="btn btn-danger float-right" type="submit">Delete</button>
             </form> 
+            @endcan
             <a href="{{$link->url}}"><button class="btn btn-light">Go to the link</button></a>
+            @can('link_edit')
             <a href="{{route('admin.links.edit',['link'=>$link->id])}}"><button class="btn btn-dark">Edit</button></a>
+            @endcan
         </li>
         @empty
         <span class="badge badge-secondary"><h1>NO LINKS YET</h1></span>

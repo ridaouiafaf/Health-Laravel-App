@@ -11,14 +11,16 @@
                         </p>
                     @endif
                     
-                    
+                     
                     {{-- <a class="navbar-brand" href="#"><img src={{asset('img/logo.png')}} alt="logo"></a> --}}
 
                     <form method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
                         <h1>Sign Up</h1>
                         <p class="text-muted">{{ trans('global.register') }}</p>
-                        
+                        <div style="width: 100%;text-align: right;">
+                            <img src="{{asset('img/signupDesign.png')}}"/>
+                        </div>
                         <br>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
@@ -26,7 +28,7 @@
                                     <i class="fa fa-user"></i>
                                 </span>
                             </div>
-                            <input name="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required autofocus placeholder="{{ trans('global.login_name') }}" value="{{ old('name', null) }}">
+                            <input name="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required autofocus placeholder="Name" value="{{ old('name', null) }}">
                             @if($errors->has('name'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('name') }}
@@ -59,20 +61,8 @@
                             @endif
                         </div>
 
-                        <div class="input-group mb-4">
-                            <div class="form-check checkbox">
-                                <input class="form-check-input" name="remember" type="checkbox" id="remember" style="vertical-align: middle;" />
-                                <label class="form-check-label" for="remember" style="vertical-align: middle;">
-                                    {{ trans('global.remember_me') }}
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6">
-                                <button type="submit" class="btn btn-danger px-4">Register</button>
-                            </div>
-                        </div>
+                        <button type="submit" class="btn btn-danger px-4 float-right">Register</button>
+                    
                     </form>
                     
                 </div>

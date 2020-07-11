@@ -19,7 +19,7 @@
                         <h1>Orzoqni Al Hayat</h1>
                         <p class="text-muted">{{ trans('global.login') }}</p>
                         <div style="width: 100%;text-align: right;">
-                            <img src={{asset('img/logoLogin.png')}} style="width: 600px;" />
+                            <img src="{{asset('img/loginLogo.png')}}" />
                         </div>
                         <br>
                         <div class="input-group mb-2">
@@ -57,21 +57,17 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-6">
-                                <button type="submit" class="btn btn-danger px-4">
-                                    {{ trans('global.login') }}
-                                </button>
-                                    <button class="btn btn-danger px-4">
-                                        <a class="text-white" href="{{route('register')}}">
-                                            Register
-                                        </a>        
-                                    </button>
-                            </div>
+                        <div style="display: inline" class="col-md-6 float-right">
+                            <button type="submit" class="btn btn-danger px-4">
+                                {{ trans('global.login') }}
+                            </button>
+                            <button class="btn btn-dark px-4">
+                                <a class="text-white" href="{{route('register')}}">Register</a>
+                            </button>
                         </div>
                     </form>
                     
-                    <div class="col-6 text-right">
+                    <div class="col-md-6 text-left">
                         <a class="btn btn-link text-success px-0" href="{{ route('password.request') }}">
                             {{ trans('global.forgot_password') }}
                         </a>

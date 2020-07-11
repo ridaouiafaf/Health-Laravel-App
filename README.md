@@ -3,8 +3,10 @@
 
 This project is build by me using this useful template from LaravelDaily Team "Big thanks to them"
 Link to the template used : https://github.com/LaravelDaily/Laravel-Appointments
-![Login](https://data.whicdn.com/images/345757051/original.png)
-![...](https://data.whicdn.com/images/345832057/original.png)
+![Login](https://data.whicdn.com/images/346099451/original.png)
+![Sign up](https://data.whicdn.com/images/346099460/original.png)
+![News Feed](https://data.whicdn.com/images/345832057/original.png)
+![Useful links](https://data.whicdn.com/images/346099482/original.png)
 
 ---
 

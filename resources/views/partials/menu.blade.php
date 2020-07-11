@@ -2,6 +2,7 @@
     <nav class="sidebar-nav">
 
         <ul class="nav">
+            @can('post_access')
             <li class="nav-item">
                 <a href="{{ route("admin.posts.index") }}" class="nav-link">
                     <i class="nav-icon fas fa-fw fa-tachometer-alt text-success">
@@ -10,6 +11,8 @@
                     News Feed
                 </a>
             </li>
+            @endcan
+            @can('link_access')
             <li class="nav-item">
                 <a href="{{ route("admin.links.index") }}" class="nav-link">
                     <i class="nav-icon fas fa-fw fa-tachometer-alt text-success">
@@ -18,6 +21,7 @@
                     Beneficial Links
                 </a>
             </li>
+            @endcan
             @can('user_management_access')
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle " href="#">

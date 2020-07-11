@@ -8,7 +8,7 @@ Route::redirect('/home', '/admin/posts');
 Auth::routes();
 
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => '', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::resource('posts','PostController');
     Route::resource('links','LinkController');
 

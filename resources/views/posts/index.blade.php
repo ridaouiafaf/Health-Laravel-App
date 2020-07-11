@@ -2,8 +2,9 @@
 @section('content')
 <div class="content">
     <div class="row">
+        @can('post_create')
         <a class="btn btn-success float-right" href="{{route('admin.posts.create')}}" >+ Add Post</a>
-
+        @endcan
         <div class="col-lg-12">
             <ul class="list-group"> 
                 @forelse ($posts as $post)
