@@ -11,7 +11,7 @@
                 <div class="gallery">
                     <div class="mb-3 pics animation all">
                     <h3>{{$post->title}}</h3>
-                      <img usemap="{{route('admin.posts.index')}}" src="{{asset('posts-img/'.$post->image->imgName)}}" width="600" height="400"> 
+                      <img class="img-post" usemap="{{route('admin.posts.index')}}" src="{{asset('posts-img/'.$post->image->imgName)}}" width="600" height="400"> 
                     <div class="desc">
                         <p class="ArticleBody">{{ substr(strip_tags($post->body), 0, 500) }}
                             {{ strlen(strip_tags($post->body)) > 50 ? "..." : "" }} 

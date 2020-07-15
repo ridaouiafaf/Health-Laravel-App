@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        // abort_if(Gate::denies('post_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('post_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $posts=Post::with(['image'])->orderBy('created_at', 'desc')->get();
 

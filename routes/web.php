@@ -4,14 +4,27 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
-Route::redirect('/home', '/admin/posts');
+Route::redirect('/home', '/posts');
 Auth::routes();
 
 
 Route::group(['prefix' => '', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    //News Feed
     Route::resource('posts','PostController');
+    Route::get('newsfeed','PostController@index')->name('posts.index');
+    Route::post('newsfeed','PostController@index')->name('posts.index');
+
+    
+    // Beneficial Links
     Route::resource('links','LinkController');
 
+    //Donations 
+    Route::resource('donations','DonationController');
+    Route::get('donations/urgent','DonationController@indexUrgent')->name('donations.urgent.index');
+    Route::post('donations/urgent','DonationController@indexUrgent')->name('donations.urgent.index');
+    Route::get('donations/benevole','DonationController@indexBenevole')->name('donations.benevole.index');
+    Route::post('donations/benevole','DonationController@indexBenevole')->name('donations.benevole.index');
+    
 
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');

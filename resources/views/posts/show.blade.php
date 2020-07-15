@@ -20,7 +20,7 @@
     @can('post_edit')
         <a href="{{route('admin.posts.edit',['post'=>$post->id])}}">
             <button style=" background-color:rgb(189, 134, 134); color:white" class="btn float-right col-md-2" type="button">Edit</button>
-    </a>
+        </a>
     @endcan
 </div>
 

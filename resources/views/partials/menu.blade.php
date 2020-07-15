@@ -5,27 +5,53 @@
             @can('post_access')
             <li class="nav-item">
                 <a href="{{ route("admin.posts.index") }}" class="nav-link">
-                    <i class="nav-icon fas fa-fw fa-tachometer-alt text-success">
+                    <i class="nav-icon fas fa-home fa-tachometer-alt text-success">
 
                     </i>
                     News Feed
                 </a>
             </li>
             @endcan
+
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link  nav-dropdown-toggle " href="#">
+                    <i class="fa-fw fas fa-tint nav-icon text-success"></i>
+                    Blood Donation
+                </a>
+                <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a href="{{ route("admin.donations.urgent.index") }}" class="nav-link">
+                                <i class="fa-fw fas fa-heartbeat nav-icon text-success">
+
+                                </i>
+                                Urgent
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("admin.roles.index") }}" class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
+                                <i class="fa-fw fas fa-podcast nav-icon text-success">
+
+                                </i>
+                                Benevole
+                            </a>
+                        </li>
+                </ul>
+            </li>
             @can('link_access')
             <li class="nav-item">
                 <a href="{{ route("admin.links.index") }}" class="nav-link">
-                    <i class="nav-icon fas fa-fw fa-tachometer-alt text-success">
+                    <i class="nav-icon fas fa-link fa-tachometer-alt text-success">
 
                     </i>
                     Beneficial Links
                 </a>
             </li>
             @endcan
+            
             @can('user_management_access')
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle " href="#">
-                        <i class="fa-fw fas fa-users nav-icon text-success">
+                        <i class="fa-fw fas fa-cogs nav-icon text-success">
 
                         </i>
                         {{ trans('cruds.userManagement.title') }}
@@ -54,7 +80,7 @@
                         @can('user_access')
                             <li class="nav-item">
                                 <a href="{{ route("admin.users.index") }}" class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
-                                    <i class="fa-fw fas fa-user nav-icon text-success">
+                                    <i class="fa-fw fas fa-group nav-icon text-success">
 
                                     </i>
                                     {{ trans('cruds.user.title') }}
@@ -67,7 +93,7 @@
             @can('service_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.services.index") }}" class="nav-link {{ request()->is('admin/services') || request()->is('admin/services/*') ? 'active' : '' }}">
-                        <i class="fa-fw fas fa-cogs nav-icon text-success">
+                        <i class="fa-fw fas fa-plus-circle nav-icon text-success">
 
                         </i>
                         {{ trans('cruds.service.title') }}
@@ -77,7 +103,7 @@
             @can('employee_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.employees.index") }}" class="nav-link {{ request()->is('admin/employees') || request()->is('admin/employees/*') ? 'active' : '' }}">
-                        <i class="fa-fw fas fa-cogs nav-icon text-success">
+                        <i class="fa-fw fas fa-briefcase nav-icon text-success">
 
                         </i>
                         {{ trans('cruds.employee.title') }}
@@ -87,7 +113,7 @@
             @can('patient_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.patients.index") }}" class="nav-link {{ request()->is('admin/patients') || request()->is('admin/patients/*') ? 'active' : '' }}">
-                        <i class="fa-fw fas fa-cogs nav-icon text-success">
+                        <i class="fa-fw fas fa-users nav-icon text-success">
 
                         </i>
                         {{ trans('cruds.patient.title') }}
@@ -97,7 +123,7 @@
             @can('appointment_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.appointments.index") }}" class="nav-link {{ request()->is('admin/appointments') || request()->is('admin/appointments/*') ? 'active' : '' }}">
-                        <i class="fa-fw fas fa-cogs nav-icon text-success">
+                        <i class="fa-fw fas fa-calendar-check-o nav-icon text-success">
 
                         </i>
                         {{ trans('cruds.appointment.title') }}
@@ -106,7 +132,7 @@
             @endcan
             <li class="nav-item">
                 <a href="{{ route("admin.systemCalendar") }}" class="nav-link {{ request()->is('admin/system-calendar') || request()->is('admin/system-calendar/*') ? 'active' : '' }}">
-                    <i class="nav-icon fa-fw fas fa-calendar text-success">
+                    <i class="nav-icon fa-calendar-plus-o fas fa-calendar text-success">
 
                     </i>
                     {{ trans('global.systemCalendar') }}

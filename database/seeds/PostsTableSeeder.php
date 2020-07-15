@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Post;
+
+use Illuminate\Database\Seeder;
 
 
 class PostsTableSeeder extends Seeder

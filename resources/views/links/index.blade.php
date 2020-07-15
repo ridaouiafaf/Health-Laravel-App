@@ -35,7 +35,7 @@
             @endcan
             <a href="{{$link->url}}"><button class="btn btn-light">Go to the link</button></a>
             @can('link_edit')
-            <a href="{{route('admin.links.edit',['link'=>$link->id])}}"><button class="btn btn-dark">Edit</button></a>
+            <a href="{{route('admin.links.edit',['link'=>$link->id])}}"><button class="btn btn-dark" type="button">Edit</button></a>
             @endcan
         </li>
         @empty

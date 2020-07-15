@@ -8,12 +8,12 @@ use App\Link;
 use Illuminate\Http\Request;
 use Gate;
 use Symfony\Component\HttpFoundation\Response;
-
+ 
 class LinkController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest')->except(['index']);
+        $this->middleware('auth')->except(['index']);
     }
     /**
      * Display a listing of the resource.
@@ -37,6 +37,7 @@ class LinkController extends Controller
      */
     public function create()
     {
+        abort_if(Gate::denies('link_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         return view('links.create');
     }
 
@@ -74,6 +75,7 @@ class LinkController extends Controller
      */
     public function edit($id)
     {
+        abort_if(Gate::denies('link_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $link=Link::findOrFail($id);
 
         return view('links.edit',[
@@ -111,6 +113,7 @@ class LinkController extends Controller
      */
     public function destroy($id)
     {
+        abort_if(Gate::denies('link_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         Link::destroy($id);
 
         return redirect()->route('admin.links.index');

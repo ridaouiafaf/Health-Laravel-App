@@ -24,7 +24,7 @@
                 </div>
                 
                 <div class="form-group row">
-                    <label fodescription" class="col-md-4 col-form-label text-md-left">Description</label>
+                    <label class="col-md-4 col-form-label text-md-left">Description</label>
                     <div class="col-md-12">
                     <textarea class="form-control" name="description" id="description" type="text">{{old('description',$link->description ?? null)}}</textarea>
                     </div>
