@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("admin.roles.index") }}" class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
+                            <a href="{{ route("admin.donations.benevole.index") }}" class="nav-link">
                                 <i class="fa-fw fas fa-podcast nav-icon text-success">
 
                                 </i>
