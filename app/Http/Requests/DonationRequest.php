@@ -13,7 +13,7 @@ class DonationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class DonationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'type'=>'required',
+        'status'=>'required',
+        'donors'=>'required',
+        'gsm'=>'required',
+        'address'=>'required',
+        'city'=>'required',
+        'end_date'=>'required',
         ];
     }
 }

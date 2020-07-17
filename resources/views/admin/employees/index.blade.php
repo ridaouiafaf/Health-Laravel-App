@@ -17,7 +17,7 @@
     <div class="card-body">
         <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-Employee">
             <thead>
-                <tr>
+                <tr> 
                     <th width="10">
 
                     </th>

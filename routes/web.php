@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
-Route::redirect('/home', '/posts');
+Route::redirect('/home', '/newsfeed');
+
 Auth::routes();
 
 
@@ -16,10 +17,12 @@ Route::group(['prefix' => '', 'as' => 'admin.', 'namespace' => 'Admin', 'middlew
 
     
     // Beneficial Links
-    Route::resource('links','LinkController');
+    Route::resource('links','LinkController')->except(['show']);
 
     //Donations 
-    Route::resource('donations','DonationController');
+    
+    Route::resource('donations','DonationController')->except((['show']));
+    Route::redirect('/donations', '/donations/urgent');
     Route::get('donations/urgent','DonationController@indexUrgent')->name('donations.urgent.index');
     Route::post('donations/urgent','DonationController@indexUrgent')->name('donations.urgent.index');
     Route::get('donations/benevole','DonationController@indexBenevole')->name('donations.benevole.index');

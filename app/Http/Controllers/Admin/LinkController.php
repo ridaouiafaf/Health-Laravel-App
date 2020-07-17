@@ -62,10 +62,10 @@ class LinkController extends Controller
      * @param  \App\Link  $link
      * @return \Illuminate\Http\Response
      */
-    // public function show(Link $link)
-    // {
-    //     //
-    // }
+    public function show(Link $link)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.

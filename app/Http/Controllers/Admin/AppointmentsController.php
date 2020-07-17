@@ -40,7 +40,7 @@ class AppointmentsController extends Controller
                     'row'
                 ));
             });
-
+ 
             $table->editColumn('id', function ($row) {
                 return $row->id ? $row->id : "";
             });

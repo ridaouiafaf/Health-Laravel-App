@@ -25,7 +25,7 @@ class DonationController extends Controller
     {
         abort_if(Gate::denies('donation_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $uDonations=Donation::where('status','URGENT')->get();
+        $uDonations=Donation::where('status','URGENT')->orderBy('created_at', 'desc')->get();
         return view('donations.urgent',[
             'uDonations'=> $uDonations
         ]);
@@ -35,7 +35,7 @@ class DonationController extends Controller
     {
         abort_if(Gate::denies('donation_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $bDonations=Donation::where('status','BENEVOLE')->get();
+        $bDonations=Donation::where('status','BENEVOLE')->orderBy('created_at', 'desc')->get();
         return view('donations.benevole',[
             'bDonations'=> $bDonations
         ]);
@@ -54,16 +54,19 @@ class DonationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\DonationRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DonationRequest $request)
+    public function store(Request $request)
     {
         $data = $request->all();
+        $data['user_id']=auth()->user()->id;
         Donation::create($data);
         
-
-        return redirect()->route('admin.donations.index');
+        if($data['status']=='URGENT')
+        return redirect()->route('admin.donations.urgent.index');
+        else
+        return redirect()->route('admin.donations.benevole.index');
     }
 
     /**
@@ -72,10 +75,10 @@ class DonationController extends Controller
      * @param  \App\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -104,15 +107,21 @@ class DonationController extends Controller
     {
         $donation=Donation::findOrFail($id);
 
-        $donation->title=$request->input('title');
-        $donation->description=$request->input('description');
-
+        // $donation->update($request->all());
+        $donation->type=$request->input('type');
+        $donation->status=$request->input('status');
+        $donation->gsm=$request->input('gsm');
+        $donation->end_date=$request->input('end_date');
+        $donation->city=$request->input('city');
+        $donation->address=$request->input('address');
+        $donation->donors=$request->input('donors');
         
-        $donation->url=$request->input('url');
-            
         $donation->save();
 
-        return redirect()->route('admin.donations.index');
+        if($donation->status=='URGENT')
+        return redirect()->route('admin.donations.urgent.index');
+        else
+        return redirect()->route('admin.donations.benevole.index');
     }
 
     /**
@@ -124,8 +133,12 @@ class DonationController extends Controller
     public function destroy($id)
     {
         abort_if(Gate::denies('donation_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $donation=Donation::findOrFail($id);
         Donation::destroy($id);
 
-        return redirect()->route('admin.donations.index');
+        if($donation->status=='URGENT')
+        return redirect()->route('admin.donations.urgent.index');
+        else
+        return redirect()->route('admin.donations.benevole.index');
     }
 }

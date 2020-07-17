@@ -11,10 +11,11 @@ class Donation extends Model
     protected $fillable= [
         'type',
         'status',
-        'donneurs',
+        'donors',
         'gsm',
         'address',
         'city',
+        'end_date',
         'user_id',
     ];
 

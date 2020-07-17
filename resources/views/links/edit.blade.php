@@ -19,7 +19,7 @@
                 <div class="form-group row">
                 <label for="title" class="col-md-4 col-form-label text-md-left">Title</label>
                     <div class="col-md-12">
-                        <input class="form-control" name="title" id="title" type=url" value="{{old('title',$link->title ?? null)}}">
+                        <input class="form-control" name="title" id="title" type="text" value="{{old('title',$link->title ?? null)}}">
                     </div>
                 </div>
                 

@@ -17,10 +17,11 @@ class CreateDonationsTable extends Migration
             $table->id();
             $table->string('type'); // type sanguin
             $table->string('status');//urgent ou pas
-            $table->integer('donneurs');//nombres de personnes voulu
+            $table->integer('donors');//nombres de personnes voulu
             $table->string('gsm');// telephone
             $table->string('address');// address où donner?
             $table->string('city');// ville
+            $table->datetime('end_date');
             $table->bigInteger('user_id')->constrained();// utilisateur ayant poster l'annonce
             $table->timestamps();
         });

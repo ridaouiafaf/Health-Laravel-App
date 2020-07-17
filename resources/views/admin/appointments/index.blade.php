@@ -76,7 +76,7 @@
         alert('{{ trans('global.datatables.zero_selected') }}')
 
         return
-      }
+      } 
 
       if (confirm('{{ trans('global.areYouSure') }}')) {
         $.ajax({
