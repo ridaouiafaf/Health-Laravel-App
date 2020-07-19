@@ -128,7 +128,7 @@
                     </a>
                 </li>
             @endcan
-            {{-- @can('appointment_access')
+            @can('appointment_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.appointments.index") }}" class="nav-link {{ request()->is('admin/appointments') || request()->is('admin/appointments/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-calendar-check-o nav-icon text-success">
@@ -137,7 +137,7 @@
                         {{ trans('cruds.appointment.title') }}
                     </a>
                 </li>
-            @endcan --}}
+            @endcan
             <li class="nav-item">
                 <a href="{{ route("admin.systemCalendar") }}" class="nav-link {{ request()->is('admin/system-calendar') || request()->is('admin/system-calendar/*') ? 'active' : '' }}">
                     <i class="nav-icon fa-calendar-plus-o fas fa-calendar text-success">

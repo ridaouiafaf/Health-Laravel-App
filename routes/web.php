@@ -62,7 +62,7 @@ Route::group(['prefix' => '', 'as' => 'admin.', 'namespace' => 'Admin', 'middlew
     // Appointments
     Route::delete('appointments/destroy', 'AppointmentsController@massDestroy')->name('appointments.massDestroy');
     Route::resource('appointments', 'AppointmentsController');
-    Route::redirect('/appointments', '/system-calendar');
+    // Route::redirect('/appointments', '/system-calendar');
 
 
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
