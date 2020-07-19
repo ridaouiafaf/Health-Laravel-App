@@ -17,7 +17,7 @@
       <a href="{{route('index')}}">Home</a>
 				<a href="{{route('login')}}">Login</a>
 				<a href="{{route('register')}}">Sign Up</a>
-				<a href="#">Contact Us</a>
+			<a href="{{route('contact-Us.index')}}">Contact Us</a>
         
 			</header>
 
@@ -50,9 +50,12 @@
 									</div>
 									<div class="col col2">
 										<h3>Who Are We?</h3>
-										<p>This platform is a general prototype for an appointment booking & blood donation announcements system.</p>
-										<p>Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex. </p>
-										<a href="#" class="button">Learn More</a>
+										<p style="color: black">This platform is a general prototype for an appointment booking & blood donation announcements system.</p>
+										<p style="color: black">The main reason to create this initial demo was because of noticing how much Moroccans need: 
+											a platform where they can find donators or be donators, 
+											managing booking appointments, 
+											a trusted resources for medical information and guides, 
+											and rising awareness of blood donation importance</p>
 									</div>
 								</div>
 						</div>
@@ -63,10 +66,10 @@
 						<div class="inner">
 							<div class="flex flex-2">
 								<div class="col col2">
-									<h3>Suspendisse quis massa vel justo</h3>
-									<p>Etiam posuere hendrerit arcu, ac blandit nulla. Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex.</p>
-									<p>Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex. </p>
-									<a href="#" class="button">Learn More</a>
+									<h3>Why Is It Important To Donate?</h3>
+									<p>Donating to charity is a major mood-booster. The knowledge that you’re helping others is hugely empowering and, in turn, can make you feel happier and more fulfilled. Research has identified a link between making a donation to charity and increased activity in the area of the brain that registers pleasure - proving that as the old adage goes, it really is far better to give than to receive.</p>
+									<p>Donating to urgent cases is a major life-saver, you save lives and make families happy to have their patient family-member by their sides again.</p>
+									<a href="#" class="button">Besides, Who Knows?! May Be It Will Save Yours Too!</a>
 								</div>
 								<div class="col col1 first">
 									<div class="image round fit">
@@ -81,30 +84,27 @@
 					<section class="wrapper style1">
 						<div class="inner">
 							<header class="align-center">
-								<h2>Aliquam ipsum purus dolor</h2>
-								<p>Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.</p>
+								<h2>What Services Do We Provide So Far?</h2>
+								<p style="color: brown">Let's have a look, a curious one!</p>
 							</header>
 							<div class="flex flex-3">
 								<div class="col align-center">
 									<div class="image round fit">
-										<img src="img/pic03.png" alt="" />
+										<img src="img/pic03.png" alt="" width="400" height="auto" />
 									</div>
-									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-									<a href="#" class="button">Learn More</a>
+									<a href="#" class="button" style="background-color: black">Blood Donation Announes Platform</a>
 								</div>
 								<div class="col align-center">
 									<div class="image round fit">
-										<img src="img/pic05.jpg" alt="" />
+										<img src="img/pic05.jpg" alt="" width="400" height="auto" />
 									</div>
-									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-									<a href="#" class="button">Learn More</a>
+									<a href="#" class="button" style="background-color: black">News Feed</a>
 								</div>
 								<div class="col align-center">
 									<div class="image round fit">
-										<img src="img/pic04.webp" alt="" />
+										<img src="img/pic04.webp" alt="" width="400" height="auto" />
 									</div>
-									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-									<a href="#" class="button">Learn More</a>
+									<a href="#" class="button" style="background-color: black">Booking Appointment</a>
 								</div>
 							</div>
 						</div>
@@ -112,18 +112,7 @@
 
 			</div>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="copyright">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
-					</ul>
-					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
-				</div>
-			</footer>
+		
 
 		<!-- Scripts -->
 			<script src="js/jquery.min.js"></script>
@@ -135,13 +124,5 @@
 
 	</body>
 </html>
-          <a href="about.html" class="btn btn-primary-outline">Savoir plus</a>
-        </div>
-        <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
-          <img class="img-fluid w-100" src="images/about/about-us.jpg" alt="about image">
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /about us -->
+         
   

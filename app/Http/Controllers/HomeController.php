@@ -12,3 +12,4 @@ class HomeController
         return route('admin.posts.index');
     }
 }
+ 

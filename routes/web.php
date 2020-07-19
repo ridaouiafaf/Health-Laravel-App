@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('/', 'HomeController')->only(['index']);
+Route::resource('/contact-Us', 'ContactController')->only(['index']);
 
 // Route::redirect('/', '/login');
 Route::redirect('/home', '/newsfeed');
@@ -62,7 +63,7 @@ Route::group(['prefix' => '', 'as' => 'admin.', 'namespace' => 'Admin', 'middlew
     // Appointments
     Route::delete('appointments/destroy', 'AppointmentsController@massDestroy')->name('appointments.massDestroy');
     Route::resource('appointments', 'AppointmentsController');
-    // Route::redirect('/appointments', '/system-calendar');
+    Route::redirect('/appointments', '/system-calendar');
 
 
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
