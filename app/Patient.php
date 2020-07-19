@@ -21,6 +21,7 @@ class Patient extends Model
         'name',
         'phone',
         'email',
+        'user_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -29,5 +30,10 @@ class Patient extends Model
     public function appointments()
     {
         return $this->hasMany(Appointment::class, 'patient_id', 'id');
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

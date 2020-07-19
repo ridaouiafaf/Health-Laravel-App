@@ -10,7 +10,7 @@
                             {{ \Session::get('message') }}
                         </p>
                     @endif
-                    
+                     
                      
                     {{-- <a class="navbar-brand" href="#"><img src={{asset('img/logo.png')}} alt="logo"></a> --}}
 
@@ -45,6 +45,20 @@
                             @if($errors->has('email'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('email') }}
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                            </div>
+                            <input name="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" required autofocus placeholder="+212 XXXXXXXXX" value="{{ old('phone', null) }}">
+                            @if($errors->has('phone'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('phone') }}
                                 </div>
                             @endif
                         </div>

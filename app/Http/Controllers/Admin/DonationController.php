@@ -6,6 +6,7 @@ use App\Donation;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DonationRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Gate;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,23 +22,39 @@ class DonationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function index()
+    {
+        abort_if(Gate::denies('donation_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        // $today=Carbon::now()->format('d-m-Y');
+        $today=Carbon::now();
+        $id=auth()->user()->id;
+        $userDonations=Donation::with(['user'])->where('user_id',$id)->orderBy('created_at', 'desc')->get();
+        return view('donations.index',[
+            'userDonations'=> $userDonations,
+            'today'=>$today
+        ]);
+    }
+    
     public function indexUrgent()
     {
         abort_if(Gate::denies('donation_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
+        $today=Carbon::now();
         $uDonations=Donation::where('status','URGENT')->orderBy('created_at', 'desc')->get();
         return view('donations.urgent',[
-            'uDonations'=> $uDonations
+            'uDonations'=> $uDonations,
+            'today'=>$today
         ]);
     }
 
     public function indexBenevole()
     {
         abort_if(Gate::denies('donation_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
+        $today=Carbon::now();
         $bDonations=Donation::where('status','BENEVOLE')->orderBy('created_at', 'desc')->get();
         return view('donations.benevole',[
-            'bDonations'=> $bDonations
+            'bDonations'=> $bDonations,
+            'today'=>$today
         ]);
     }
     /**

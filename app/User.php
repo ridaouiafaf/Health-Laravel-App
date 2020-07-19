@@ -71,4 +71,9 @@ class User extends Authenticatable
 
         return $this->hasMany(Donation::class);
     }
+
+    public function patient()
+    {
+        return $this->hasOne(Patient::class);
+    }
 }

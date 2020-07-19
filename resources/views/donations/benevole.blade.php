@@ -10,7 +10,7 @@
     @can('donation_create')
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
-                <a class="btn btn-dark" href="{{route('admin.donations.create')}}" > + Add Announcement</a>
+                <a class="btn btn-white text-success border border-success" href="{{route('admin.donations.create')}}" > + Add Announcement</a>
             </div>
         </div>
     @endcan
@@ -18,6 +18,7 @@
         <div class="col-lg-12">
             <ul class="list-group"> 
                 @forelse ($bDonations as $donation)
+                @if ($donation->end_date>=$today)
                 <div class="gallery bg-white">
                     <div class="mb-3 pics animation all">
                     
@@ -52,6 +53,8 @@
                             <h6><b>Phone Number:</b> {{$donation->gsm}}</h6>
                             <h6><b>Address:</b> {{$donation->address}}</h6>
                             <h6><b>City:</b> {{$donation->city}}</h6>
+                            <h6><b>Expired on:</b> {{substr($donation->end_date,0,10)}}</h6>
+                            @if (auth()->user()->id==$donation->user_id ||auth()->user()->id==1 )
                             @can('donation_delete')
                             <form class="col-md-12" style="display: inline" method="POST" action="{{route('admin.donations.destroy',['donation'=>$donation->id])}}">
                                 @csrf
@@ -62,11 +65,13 @@
                             @can('donation_edit')
                             <a href="{{route('admin.donations.edit',['donation'=>$donation->id])}}"><button class="btn btn-dark" type="button">Edit</button></a>
                             @endcan
+                            @endif
+                            
                         </p>
                     </div>
                   </div>
                 </div>
-                
+                @endif
                 @empty
                 <span class="badge badge-secondary"><h1>NO ANNOUNCES YET</h1></span>
                 @endforelse

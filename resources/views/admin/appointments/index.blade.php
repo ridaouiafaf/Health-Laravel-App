@@ -105,7 +105,7 @@
 { data: 'employee_name', name: 'employee.name' },
 { data: 'start_time', name: 'start_time' },
 { data: 'finish_time', name: 'finish_time' },
-{ data: 'price', name: 'price' },
+{ data: 'price', name: 'price' }, 
 { data: 'comments', name: 'comments' },
 { data: 'services', name: 'services.name' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }

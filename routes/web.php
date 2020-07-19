@@ -3,13 +3,19 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/', '/login');
+Route::resource('/', 'HomeController')->only(['index']);
+
+// Route::redirect('/', '/login');
 Route::redirect('/home', '/newsfeed');
 
 Auth::routes();
 
 
 Route::group(['prefix' => '', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    
+    // Home
+
+
     //News Feed
     Route::resource('posts','PostController');
     Route::get('newsfeed','PostController@index')->name('posts.index');
@@ -22,7 +28,6 @@ Route::group(['prefix' => '', 'as' => 'admin.', 'namespace' => 'Admin', 'middlew
     //Donations 
     
     Route::resource('donations','DonationController')->except((['show']));
-    Route::redirect('/donations', '/donations/urgent');
     Route::get('donations/urgent','DonationController@indexUrgent')->name('donations.urgent.index');
     Route::post('donations/urgent','DonationController@indexUrgent')->name('donations.urgent.index');
     Route::get('donations/benevole','DonationController@indexBenevole')->name('donations.benevole.index');
@@ -57,6 +62,8 @@ Route::group(['prefix' => '', 'as' => 'admin.', 'namespace' => 'Admin', 'middlew
     // Appointments
     Route::delete('appointments/destroy', 'AppointmentsController@massDestroy')->name('appointments.massDestroy');
     Route::resource('appointments', 'AppointmentsController');
+    Route::redirect('/appointments', '/system-calendar');
+
 
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
 });

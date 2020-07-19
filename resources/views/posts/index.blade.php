@@ -1,10 +1,20 @@
 @extends('layouts.admin')
 @section('content')
 <div class="content">
+    @can('post_create')
+    <div style="margin-bottom: 10px;" class="row">
+        <div class="col-lg-12">
+            <a class="btn btn-dark" href="{{route('admin.posts.create')}}" >
+                <i class="fa-fw fas fa-edit nav-icon text-white">
+    
+                </i>
+                Add Post
+            </a>
+        </div>
+    </div>    
+    
+    @endcan
     <div class="row">
-        @can('post_create')
-        <a class="btn btn-success float-right" href="{{route('admin.posts.create')}}" >+ Add Post</a>
-        @endcan
         <div class="col-lg-12">
             <ul class="list-group"> 
                 @forelse ($posts as $post)

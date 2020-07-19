@@ -38,18 +38,18 @@ class AppointmentsController extends Controller
                     'deleteGate',
                     'crudRoutePart',
                     'row'
-                ));
+                )); 
             });
  
             $table->editColumn('id', function ($row) {
                 return $row->id ? $row->id : "";
             });
             $table->addColumn('patient_name', function ($row) {
-                return $row->patient ? $row->patient->name : '';
+                return $row->patient ? $row->patient->name : "";
             });
 
             $table->addColumn('employee_name', function ($row) {
-                return $row->employee ? $row->employee->name : '';
+                return $row->employee ? $row->employee->name : "";
             });
 
             $table->editColumn('price', function ($row) {
@@ -94,7 +94,7 @@ class AppointmentsController extends Controller
         $appointment = Appointment::create($request->all());
         $appointment->services()->sync($request->input('services', []));
 
-        return redirect()->route('admin.appointments.index');
+        return redirect()->route('admin.systemCalendar');
     }
 
     public function edit(Appointment $appointment)
@@ -116,8 +116,8 @@ class AppointmentsController extends Controller
     {
         $appointment->update($request->all());
         $appointment->services()->sync($request->input('services', []));
-
-        return redirect()->route('admin.appointments.index');
+ 
+        return redirect()->route('admin.systemCalendar');
     }
 
     public function show(Appointment $appointment)

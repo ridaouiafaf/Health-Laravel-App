@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAppointmentsTable extends Migration
 {
-    public function up()
+    public function up() 
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->increments('id');

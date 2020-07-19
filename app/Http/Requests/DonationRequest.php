@@ -24,7 +24,7 @@ class DonationRequest extends FormRequest
     public function rules()
     {
         return [
-            'type'=>'required',
+        'type'=>'required',
         'status'=>'required',
         'donors'=>'required',
         'gsm'=>'required',

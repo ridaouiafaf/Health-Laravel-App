@@ -11,11 +11,13 @@ class CreatePatientsTable extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('name')->nullable();
+            $table->string('name');
 
-            $table->string('phone')->nullable();
+            $table->string('phone');
 
-            $table->string('email')->nullable();
+            $table->string('email')->unique();
+
+            $table->unsignedBigInteger('user_id')->unique();
 
             $table->timestamps();
 

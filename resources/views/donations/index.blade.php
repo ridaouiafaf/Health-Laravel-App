@@ -1,26 +1,26 @@
 @extends('layouts.admin')
 @section('content')
 <div class="content">
+    
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <h3 style=" font-family: fantasy;color:rgb(155, 25, 25);">Urgent Blood Donation Announcements</h3>
+            <h3 class="text-dark">My Announcements</h3>
         </div>
     </div>
     @can('donation_create')
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
-                <a class="btn btn-white text-danger border border-danger" href="{{route('admin.donations.create')}}" > + Add Announcement</a>
+                <a class="btn btn-white text-dark border border-dark" href="{{route('admin.donations.create')}}" > + Add Announcement</a>
             </div>
         </div>
     @endcan
-
     <div class="row">
         <div class="col-lg-12">
             <ul class="list-group"> 
-                @forelse ($uDonations as $donation)
-                @if ($donation->end_date>=$today)
+                @forelse ($userDonations as $donation)
                 <div class="gallery bg-white">
                     <div class="mb-3 pics animation all">
+                    
                     <div class="desc">
                         <p>
                             @if ($donation->type=='A+')
@@ -67,10 +67,9 @@
                             
                         </p>
                     </div>
-                    
                   </div>
                 </div>
-                @endif
+                
                 @empty
                 <span class="badge badge-secondary"><h1>NO ANNOUNCES YET</h1></span>
                 @endforelse

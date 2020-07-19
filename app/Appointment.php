@@ -19,7 +19,7 @@ class Appointment extends Model
         'deleted_at',
         'finish_time',
     ];
-
+ 
     protected $fillable = [
         'price',
         'comments',

@@ -53,7 +53,6 @@ class PostController extends Controller
 
 
         $image= new Image();
-
         
         $file= $request->file('imgName');
             
