@@ -22,7 +22,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
     
-    {{-- Logo  --}}
+    {{-- Logo  --}} 
     <link rel="shortcut icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
     <link rel="icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
 
