@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('title')
+    Services
+@endsection
 @section('content')
 @can('service_create')
     <div style="margin-bottom: 10px;" class="row">

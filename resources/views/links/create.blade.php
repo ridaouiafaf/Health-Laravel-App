@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title')
+    Link | Create
+@endsection
+
 @section('content')
 
 <div class="content">

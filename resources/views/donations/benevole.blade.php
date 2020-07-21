@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('title')
+   Benevole Announces
+@endsection
 @section('content')
 <div class="content">
     

@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title')
+{{$post->title}}
+@endsection
+
 @section('content')
 <h2 class="text-center" style="font-family: fantasy">{{$post->title}}</h2>
 

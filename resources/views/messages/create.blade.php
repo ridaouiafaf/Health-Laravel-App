@@ -5,13 +5,23 @@
         <div class="card-group">
             <div class="card p-4">
                 <div class="card-body">
+                    <header class="nav-bar">
+                        <a class="nav-item text-dark float-right" href="{{route('index')}}">
+                            <h3>
+                                <i class="nav-icon fas fa-home fa-tachometer-alt text-dark">
+
+                                </i>
+                            </h3>
+                        </a>
+                    </header>
+ 
                     @if(\Session::has('message'))
                         <p class="alert alert-info">
                             {{ \Session::get('message') }}
                         </p>
                     @endif
                      
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('contact-Us.store') }}">
                         {{ csrf_field() }}
                         <h1>Contact Us</h1>
                         <div style="width: 100%;text-align: right;">
@@ -45,6 +55,8 @@
                             @endif
                         </div>
 
+                        
+
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -61,13 +73,27 @@
 
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-tag"></i>
+                                </span>
+                            </div>
+                            <input name="subject" type="text" class="form-control{{ $errors->has('subject') ? ' is-invalid' : '' }}" required autofocus placeholder="Subject" value="{{ old('subject', null) }}">
+                            @if($errors->has('subject'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('subject') }}
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                             </div>
-                            <textarea class="form-control" name="body" id="body" type="text" placeholder="How Can We Help You ?">{{old('body',$post->body ?? null)}}</textarea>
+                            <textarea class="form-control" name="message" id="message" type="text" placeholder="How Can We Help You ?">{{old('body',$post->body ?? null)}}</textarea>
                             {{-- <input name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}"> --}}
-                            @if($errors->has('password'))
+                            @if($errors->has('message'))
                                 <div class="invalid-feedback">
-                                    {{ $errors->first('password') }}
+                                    {{ $errors->first('message') }}
                                 </div>
                             @endif
                         </div>

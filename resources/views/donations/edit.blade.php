@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title')
+    Announcement | Edit
+@endsection
+
 @section('content')
 
 <div class="content">

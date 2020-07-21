@@ -1,10 +1,24 @@
 @extends('layouts.app')
 @section('content')
+<!-- Header -->
+
 <div class="row justify-content-center">
+    
     <div class="col-md-8">
+        
         <div class="card-group">
+            
             <div class="card p-4">
                 <div class="card-body">
+                    <header class="nav-bar">
+                        <a class="nav-item text-dark float-right" href="{{route('index')}}">
+                            <h3>
+                                <i class="nav-icon fas fa-home fa-tachometer-alt text-dark">
+
+                                </i>
+                            </h3>
+                        </a>
+                    </header>
                     @if(\Session::has('message'))
                         <p class="alert alert-info">
                             {{ \Session::get('message') }}

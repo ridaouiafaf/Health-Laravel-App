@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('title')
+    Users
+@endsection
 @section('content')
 @can('user_create')
     <div style="margin-bottom: 10px;" class="row">

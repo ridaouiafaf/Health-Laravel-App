@@ -14,14 +14,12 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-      <a href="{{route('index')}}">Home</a>
+				<a href="{{route('index')}}">Home</a>
 				<a href="{{route('login')}}">Login</a>
 				<a href="{{route('register')}}">Sign Up</a>
-			<a href="{{route('contact-Us.index')}}">Contact Us</a>
-        
+			    <a href="{{route('contact-Us.create')}}">Contact Us</a>
 			</header>
 
-	
 
 		<!-- Banner -->
 			<section id="banner" style="background-image: url('img/banner.jpg')">
@@ -45,17 +43,23 @@
 								<div class="flex flex-2">
 									<div class="col col1">
 										<div class="image round fit">
-											<a href="generic.html" class="link"><img src="img/pic01.png" alt="" /></a>
+											<a href="generic.html" class="link"><img src="img/logo.png" alt="" /></a>
 										</div>
 									</div>
 									<div class="col col2">
 										<h3>Who Are We?</h3>
-										<p style="color: black">This platform is a general prototype for an appointment booking & blood donation announcements system.</p>
-										<p style="color: black">The main reason to create this initial demo was because of noticing how much Moroccans need: 
-											a platform where they can find donators or be donators, 
-											managing booking appointments, 
-											a trusted resources for medical information and guides, 
-											and rising awareness of blood donation importance</p>
+										<p style="color: black ; text-align:justify"><b>Orzoqni Al Hayat</b> platform is a general prototype for an appointment booking & blood donation announcements system.</p>
+										<p style="color: black ; text-align:justify"> The main reason to create this initial demo was because of 
+											noticing how much Moroccans need:
+										<ul>
+											 
+											<li style="color: green">A platform where they can find donators or be donators</li>
+											<li style="color: green">Managing booking appointments</li>
+											<li style="color: green">A trusted resources for medical information and guides</li>
+										
+											<li style="color: green">Rising awareness level of blood donation importance</li>
+										</ul> 
+										</p>
 									</div>
 								</div>
 						</div>
@@ -67,8 +71,8 @@
 							<div class="flex flex-2">
 								<div class="col col2">
 									<h3>Why Is It Important To Donate?</h3>
-									<p>Donating to charity is a major mood-booster. The knowledge that you’re helping others is hugely empowering and, in turn, can make you feel happier and more fulfilled. Research has identified a link between making a donation to charity and increased activity in the area of the brain that registers pleasure - proving that as the old adage goes, it really is far better to give than to receive.</p>
-									<p>Donating to urgent cases is a major life-saver, you save lives and make families happy to have their patient family-member by their sides again.</p>
+									<p style="text-align: justify">Donating to charity is a major mood-booster. The knowledge that you’re helping others is hugely empowering and, in turn, can make you feel happier and more fulfilled. Research has identified a link between making a donation to charity and increased activity in the area of the brain that registers pleasure - proving that as the old adage goes, it really is far better to give than to receive.</p>
+									<p style="text-align: justify">Donating to urgent cases is a major life-saver, you save lives and make families happy to have their patient family-member by their sides again.</p>
 									<a href="#" class="button">Besides, Who Knows?! May Be It Will Save Yours Too!</a>
 								</div>
 								<div class="col col1 first">
@@ -92,7 +96,7 @@
 									<div class="image round fit">
 										<img src="img/pic03.png" alt="" width="400" height="auto" />
 									</div>
-									<a href="#" class="button" style="background-color: black">Blood Donation Announes Platform</a>
+									<a href="#" class="button" style="background-color: black">Blood Donation Announces Platform</a>
 								</div>
 								<div class="col align-center">
 									<div class="image round fit">

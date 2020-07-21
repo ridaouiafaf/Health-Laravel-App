@@ -56,6 +56,36 @@
             </li>
             @endcan
             
+            @can('contact_access')
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link  nav-dropdown-toggle " href="#">
+                    <i class="fa-fw fas fa-bell nav-icon text-success">
+
+                    </i>
+                    Messages
+                </a>
+                <ul class="nav-dropdown-items">
+                        
+                        <li class="nav-item">
+                            <a href="{{ route('contact-Us.index') }}" class="nav-link">
+                                <i class="fa-fw fas fa-envelope nav-icon text-success">
+
+                                </i>
+                                Unread
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('read') }}" class="nav-link">
+                                <i class="fa-fw fas fa-envelope-open nav-icon text-success">
+
+                                </i>
+                                Read
+                            </a>
+                        </li>
+                    
+                </ul>
+            </li>
+            @endcan
             @can('user_management_access')
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle " href="#">
@@ -128,7 +158,7 @@
                     </a>
                 </li>
             @endcan
-            @can('appointment_access')
+            {{-- @can('appointment_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.appointments.index") }}" class="nav-link {{ request()->is('admin/appointments') || request()->is('admin/appointments/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-calendar-check-o nav-icon text-success">
@@ -137,7 +167,7 @@
                         {{ trans('cruds.appointment.title') }}
                     </a>
                 </li>
-            @endcan
+            @endcan --}}
             <li class="nav-item">
                 <a href="{{ route("admin.systemCalendar") }}" class="nav-link {{ request()->is('admin/system-calendar') || request()->is('admin/system-calendar/*') ? 'active' : '' }}">
                     <i class="nav-icon fa-calendar-plus-o fas fa-calendar text-success">

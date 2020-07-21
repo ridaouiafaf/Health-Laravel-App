@@ -1,4 +1,9 @@
 @extends('layouts.admin')
+
+@section('title')
+    Appointments Calendar
+@endsection
+
 @section('content')
     @can('appointment_create')
     <div style="margin-bottom: 10px;" class="row">

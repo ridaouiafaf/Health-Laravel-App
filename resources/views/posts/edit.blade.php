@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title')
+   Post | Edit
+@endsection
+
 @section('content')
 <h1 style="font-family: fantasy">Editing Post</h1>
 

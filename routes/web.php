@@ -3,8 +3,14 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('/', 'HomeController')->only(['index']);
-Route::resource('/contact-Us', 'ContactController')->only(['index']);
+Route::resource('/', 'HomeController')->except(['create','update','destroy','show','store','edit']);
+Route::resource('/contact-Us', 'ContactController')->except(['edit']);
+
+
+Route::get('read', 'ContactController@read')->name('read');
+Route::post('read', 'ContactController@read')->name('read');
+Route::get('reads/{read}', 'ContactController@markIt')->name('markIt');
+Route::put('reads/{read}', 'ContactController@markIt')->name('markIt');
 
 // Route::redirect('/', '/login');
 Route::redirect('/home', '/newsfeed');
@@ -14,8 +20,6 @@ Auth::routes();
 
 Route::group(['prefix' => '', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     
-    // Home
-
 
     //News Feed
     Route::resource('posts','PostController');

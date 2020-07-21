@@ -1,4 +1,9 @@
 @extends('layouts.admin')
+
+@section('title')
+   News Feed
+@endsection
+
 @section('content')
 <div class="content">
     @can('post_create')

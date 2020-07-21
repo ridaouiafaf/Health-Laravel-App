@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section('title')
+   Post | Create
+@endsection
 @section('content')
 
 <div class="content">

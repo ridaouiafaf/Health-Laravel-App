@@ -27,7 +27,7 @@
     <link rel="icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
 
     {{-- Title  --}}
-    <title> Orzoqni Al Hayat </title>
+    <title>@yield('title') </title>
     @yield('styles')
 </head>
 

@@ -23,7 +23,8 @@ class PermissionRoleTableSeeder extends Seeder
             && substr($permission->title, 0, 11) != 'link_create' 
             && substr($permission->title, 0, 9) != 'link_edit'
             && substr($permission->title, 0, 11) != 'link_delete'
-            && substr($permission->title, 0, 9) != 'link_show';
+            && substr($permission->title, 0, 9) != 'link_show'
+            && substr($permission->title, 0, 8) != 'contact_';
         });
         Role::findOrFail(2)->permissions()->sync($user_permissions);
     }

@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('title')
+    Urgent Announces
+@endsection
 @section('content')
 <div class="content">
     <div style="margin-bottom: 10px;" class="row">

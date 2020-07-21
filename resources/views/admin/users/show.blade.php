@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 @section('content')
 
+@section('title')
+    User
+@endsection
+
 <div class="card">
     <div class="card-header">
         {{ trans('global.show') }} {{ trans('cruds.user.title') }}

@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('title')
+    Announcement | Create
+@endsection
 
 @section('content')
 
